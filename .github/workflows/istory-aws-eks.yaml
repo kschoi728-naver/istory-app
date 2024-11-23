@@ -105,8 +105,8 @@ jobs:
       - name: 10.서비스 리포지토리 체크아웃
         uses: actions/checkout@v4
         with:
-          repository: dangtong-s-inc/istory-service  
-          ref: tutor
+          repository: kschoi728/istory-service  
+          ref: main
           path: .
       
       # 이미지 태그 업데이트
@@ -126,4 +126,4 @@ jobs:
           git config --global user.name 'kschoi728-naver'
           git config --global user.email 'kschoi728@naver.com'
           git commit -am "Update image tag to ${{ env.DOCKER_TAG }}"
-          git remote set-url origin https://${{ secrets.PAT }}@github.com/dangtong-s-inc/istory-service.git
+          git remote set-url origin https://${{ secrets.PAT }}@github.com/kschoi728/istory-service.git
