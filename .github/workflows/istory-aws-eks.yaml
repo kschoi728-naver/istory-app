@@ -1,4 +1,4 @@
-name: Java CI with Gradle 2
+name: Java CI with Gradle 3
 
 on:
   push:
