@@ -126,4 +126,4 @@ jobs:
           git config --global user.name 'kschoi728-naver'
           git config --global user.email 'kschoi728@naver.com'
           git commit -am "Update image tag to ${{ env.DOCKER_TAG }}"
-          git remote set-url origin https://${{ secrets.PAT }}@github.com/kschoi728/istory-service.git
+          git remote set-url origin https://${{ secrets.PAT }}@github.com/kschoi728-naver/istory-service.git
