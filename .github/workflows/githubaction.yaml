@@ -5,7 +5,7 @@ name: first-workflow
 on: [push]
 
 jobs:
-  shell-cmd-job:
+  shell-cmd-job:  #job의 이름
     runs-on: ubuntu-latest
     steps:
       - name: echo Hello
@@ -23,3 +23,15 @@ jobs:
     steps:
       - name: show software version
         run: sw_vers
+
+#######################################
+# 의존성 JOB 추가하기
+#######################################
+  dependant-job:
+    runs-on: windows-latest #windows-latest 실행 환경에서 실행
+    needs: shell-cmd-job  #shell-cmd-job이 성공적으로 완료된 후 실행
+    steps:
+      - name: echo a string
+        run: Write-Output "Windows String"  #실제로 실행할 명령;PowerShell 명령으로, 문자열 "Windows String"을 출력
+      - name: Error Step
+        run: doesnotexit  #doesnotexit라는 명령을 실행; 이 명령은 존재하지 않는 명령이므로 오류(Error)가 발생
