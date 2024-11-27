@@ -1,3 +1,4 @@
+#에러 레벨 별 메시지 출력 
 name: Workflow Commands
 on: [push]
 
@@ -10,6 +11,15 @@ jobs:
       - name: Setting a debug message with params  
         run: echo "::debug::Missing Semicolon"
       - name: Setting an warning message with params
-        run: echo "::warnin::Missing Semicolon"
+        run: echo "::warning::Missing Semicolon"
       - name: Setting an notice message with params
         run: echo "::notice::Missing Semicolon"
+
+        #로그 그룹으로 지정하기
+      - name: Group of logs
+        run: |
+          echo "::group::My group title"
+          echo "Inside group"
+          echo "Inside group 2"
+          echo "Inside group 3"
+          echo "::endgroup::"
