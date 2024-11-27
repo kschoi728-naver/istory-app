@@ -1,3 +1,6 @@
+#######################################
+# JOB 생성하기
+#######################################
 name: first-workflow
 on: [push]
 
@@ -11,3 +14,12 @@ jobs:
         run: |
           node -v
           npm -v
+
+#######################################
+# 병렬 JOB 추가하기
+#######################################
+  parallel-job:
+    runs-on: macos-latest
+    steps:
+      - name: show software version
+        run: sw_vers
